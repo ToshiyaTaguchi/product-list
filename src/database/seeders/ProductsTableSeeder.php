@@ -56,7 +56,7 @@ public function run()
             [
                 'name' => 'シャインマスカット',
                 'price' => 1400,
-                'image' => 'images/shine_muscat.png',
+                'image' => 'images/muscat.png',
                 'description' => '爽やかな香りと上品な甘みが特長的なシャインマスカットは大人から子どもまで大人気のフルーツです。疲れた脳や体のエネルギー補給にも最適の商品です。もぎたてフルーツのスムージーをお召し上がりください！',
                 'seasons' => ['夏', '秋']
             ],
@@ -70,7 +70,7 @@ public function run()
             [
                 'name' => 'ブドウ',
                 'price' => 1100,
-                'image' => 'images/grape.png',
+                'image' => 'images/grapes.png',
                 'description' => 'ブドウの中でも人気の高い国産の「巨峰」を使用しています。高い糖度と適度な酸味が魅力で、鮮やかなパープルで見た目も可愛い商品です。もぎたてフルーツのスムージーをお召し上がりください！',
                 'seasons' => ['夏', '秋']
             ],
