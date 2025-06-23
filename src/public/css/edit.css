@@ -1,0 +1,201 @@
+/* ========================
+   共通ベーススタイル
+======================== */
+.edit {
+    padding: 2rem;
+    font-family: sans-serif;
+}
+
+.edit__back {
+    color: #3e8ed0;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* ========================
+   フォームレイアウト
+======================== */
+.edit-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+/* ========================
+   商品画像セクション
+======================== */
+.edit-form__image img {
+    width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+.edit-form__image input[type="file"] {
+    margin-top: 0.5rem;
+}
+
+.edit-form__filename {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+/* ========================
+   入力フィールド共通
+======================== */
+.edit-form__inputs input,
+.edit-form__inputs textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.edit-form__inputs label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* ========================
+   季節チェックボックス
+======================== */
+.edit-form__seasons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.edit-form__seasons-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.edit-form__seasons label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+}
+
+.edit-form__seasons input[type="checkbox"] {
+    appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.edit-form__seasons input[type="checkbox"]:checked {
+    background-color: #333;
+}
+
+/* ========================
+   商品説明
+======================== */
+.edit-form__description {
+    grid-column: span 2;
+    width: 100%;
+}
+
+.edit-form__description textarea {
+    width: 100%;
+    height: 8rem;
+    padding: 0.5rem;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    resize: vertical;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ========================
+   エラーメッセージ
+======================== */
+.edit-form__error {
+    color: red;
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+}
+
+/* ========================
+   ボタン配置
+======================== */
+.edit-form__buttons {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.edit-form__btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+}
+
+.edit-form__btn--back {
+    background: #ddd;
+}
+
+.edit-form__btn--submit {
+    background: #f8c100;
+}
+
+.edit-form__btn--delete {
+    position: absolute;
+    right: 0;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.edit-form__btn--delete img {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* ========================
+   モバイル対応
+======================== */
+@media screen and (max-width: 768px) {
+    .edit-form {
+        grid-template-columns: 1fr;
+    }
+
+    .edit-form__buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edit-form__btn--delete {
+        position: static;
+        margin-top: 1rem;
+    }
+}

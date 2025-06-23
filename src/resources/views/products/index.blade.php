@@ -37,7 +37,7 @@
     <section class="product-index__main">
         <div class="product-index__cards">
             @foreach($products as $product)
-                <a href="{{ route('products.show', $product->id) }}" class="product-card">
+                <a href="{{ route('products.edit', $product->id) }}" class="product-card">
                     <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="product-card__image">
                     <div class="product-card__body">
                         <p class="product-card__name">{{ $product->name }}</p>
