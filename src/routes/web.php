@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/products', ProductController::class);
-Route::get('/products/{product}', [ProductController::class, 'edit'])->name('products.edit');
+Route::get('/products/register', [ProductController::class, 'create'])->name('products.create');
+Route::post('/products/register', [ProductController::class, 'store'])->name('products.store');
+Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
+
+Route::resource('/products', ProductController::class)->except(['create', 'store']);
+Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
 Route::post('/products/{product}/update', [ProductController::class, 'update'])->name('products.update');
 Route::delete('/products/{product}/delete', [ProductController::class, 'destroy'])->name('products.delete');

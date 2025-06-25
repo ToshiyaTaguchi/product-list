@@ -12,7 +12,7 @@
     </div>
 
     <section class="product-index__sidebar">
-        <form action="{{ route('products.index') }}" method="GET" class="product-index__search-form">
+        <form action="{{ route('products.search') }}" method="GET" class="product-index__search-form">
             <input type="text" name="keyword" value="{{ request('keyword') }}" placeholder="商品名で検索" class="product-index__search-input">
             <button type="submit" class="product-index__search-button">検索</button>
 
@@ -29,7 +29,7 @@
         @if(request('sort'))
             <div class="product-index__sort-tag">
                 並び順: {{ request('sort') == 'price_asc' ? '低い順' : '高い順' }}
-                <a href="{{ route('products.index', ['keyword' => request('keyword')]) }}" class="product-index__tag-close">×</a>
+                <a href="{{ route('products.search', ['keyword' => request('keyword')]) }}" class="product-index__tag-close">×</a>
             </div>
         @endif
     </section>

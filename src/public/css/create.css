@@ -1,0 +1,135 @@
+.create {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.create__title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.create-form__group {
+    margin-bottom: 1.5rem;
+}
+
+.create-form__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.required {
+    color: white;
+    background-color: red;
+    font-size: 0.9rem;
+    margin-left: 0.3rem;
+}
+
+.create-form__input,
+.create-form__textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    background-color: #FFFFFF;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.create-form__file{
+    padding: 0.6rem;
+    border: none;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.create-form__textarea {
+    height: 8rem;
+    resize: vertical;
+}
+
+.create-form__checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.create-form__checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+    position: relative;
+}
+
+.create-form__checkbox-item input[type="checkbox"] {
+    appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid #333;
+    border-radius: 50%;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+}
+
+.create-form__checkbox-item input[type="checkbox"]:checked {
+    background-color: #333;
+}
+
+/* チェックマークを追加 */
+.create-form__checkbox-item input[type="checkbox"]::after {
+    content: '✔';
+    color: white;
+    font-size: 0.8rem;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+/* 選択時のみ表示 */
+.create-form__checkbox-item input[type="checkbox"]:checked::after {
+    display: block;
+}
+
+.create-form__error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.create-form__buttons {
+    display: flex;
+    justify-content: center; /* 中央寄せ */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.create-form__btn {
+    padding: 0.8rem 4rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+}
+
+.create-form__btn--back {
+    background: #ccc;
+}
+
+.create-form__btn--submit {
+    background: #f8c100;
+}
+

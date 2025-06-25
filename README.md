@@ -19,8 +19,8 @@ Laravel + Docker 環境で構築された商品管理アプリケーションで
    git remote add origin git@github.com:ToshiyaTaguchi/product-list.git
    git push -u origin main
 
-**Dockerビルド**
-1. DockerDesktopアプリを立ち上げる
+**Dockerの起動**
+1.  Docker Desktop を起動後、以下を実行
 2. `docker-compose up -d --build`
 
 > *MacのM1・M2チップのPCの場合、`no matching manifest for linux/arm64/v8 in the manifest list entries`のメッセージが表示されビルドができないことがあります。
@@ -33,9 +33,12 @@ mysql:
 ```
 
 **Laravel環境構築**
-1. `docker-compose exec php bash`
-2. `composer install`
-3. 「.env.example」ファイルを 「.env」ファイルに命名を変更。または、新しく.envファイルを作成
+1. コンテナに入る
+     `docker-compose exec php bash`
+2. Composer 依存パッケージをインストール：
+     `composer install`
+3. .envファイルの作成
+     `cp .env.example .env`
 4. .envに以下の環境変数を追加
 ``` text
 DB_CONNECTION=mysql
@@ -62,9 +65,9 @@ php artisan db:seed
 
 ## 使用技術(実行環境)
 // 提出前要確認
-- PHP8.3.0
-- Laravel8.83.27
-- MySQL8.0.26
+- PHP8.4.2
+- Laravel8.83.29
+- MySQL8.0.42
 
 ## ER図
 ![alt](erd.png)
