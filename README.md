@@ -62,12 +62,15 @@ php artisan migrate
 ``` bash
 php artisan db:seed
 ```
-
+8. シンボリックリンクの作成(画像表示用)
+``` bash
+php artisan storage:link
+```
 ## 使用技術(実行環境)
-// 提出前要確認
 - PHP8.4.2
 - Laravel8.83.29
 - MySQL8.0.42
+- Docker, Composer, phpMyAdmin
 
 ## ER図
 ![alt](erd.png)
