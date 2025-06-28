@@ -6,8 +6,8 @@ Laravel + Docker 環境で構築された商品管理アプリケーションで
 ## 環境構築手順
 
 ### 1. リポジトリをクローン
-git clone git@github.com:ToshiyaTaguchi/product-list.git
-cd product-list
+1. git clone git@github.com:ToshiyaTaguchi/product-list.git
+2. cd product-list
 
 **Dockerの起動**
 1.  Docker Desktop を起動後、以下を実行
@@ -25,15 +25,11 @@ mysql:
 **Laravel環境構築**
 1. コンテナに入る
      `docker-compose exec php bash`
-2. composer install を実行
-``` bash
-composer install
-```
-3. .envファイルの作成
+2. .envファイルの作成
 ``` bash
      `cp .env.example .env`
 ```
-4. .envに以下の環境変数を追加
+3. .envに以下の環境変数を追加
 ``` text
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -41,6 +37,11 @@ DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
+```
+4. Laravelのキャッシュ・ログディレクトリを作成
+``` bash
+mkdir -p storage/framework/{cache,views} storage/logs bootstrap/cache
+chmod -R 775 storage bootstrap/cache
 ```
 5. アプリケーションキーの作成
 ``` bash
