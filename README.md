@@ -3,21 +3,11 @@ Laravel + Docker 環境で構築された商品管理アプリケーションで
 
 ---
 
-## 環境構築
-**Gitリポジトリの作成と初期セットアップ**
-1. Laravel プロジェクトを作成する
-2. 以下をプロジェクトルートで実行して Git 管理を開始する：
-   ```bash
-   git init
-   echo "/vendor/" >> .gitignore
-   echo "/node_modules/" >> .gitignore
-   echo "/.env" >> .gitignore
-   echo "/docker/mysql/data/" >> .gitignore
-   git add .
-   git commit -m "最初のコミット"
-   git branch -m main
-   git remote add origin git@github.com:ToshiyaTaguchi/product-list.git
-   git push -u origin main
+## 環境構築手順
+
+### 1. リポジトリをクローン
+git clone git@github.com:ToshiyaTaguchi/product-list.git
+cd product-list
 
 **Dockerの起動**
 1.  Docker Desktop を起動後、以下を実行
@@ -35,11 +25,9 @@ mysql:
 **Laravel環境構築**
 1. コンテナに入る
      `docker-compose exec php bash`
-2. Composer 依存パッケージをインストール：
-     `composer install`
-3. .envファイルの作成
+2. .envファイルの作成
      `cp .env.example .env`
-4. .envに以下の環境変数を追加
+3. .envに以下の環境変数を追加
 ``` text
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -48,21 +36,21 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
-5. アプリケーションキーの作成
+4. アプリケーションキーの作成
 ``` bash
 php artisan key:generate
 ```
 
-6. マイグレーションの実行
+5. マイグレーションの実行
 ``` bash
 php artisan migrate
 ```
 
-7. シーディングの実行
+6. シーディングの実行
 ``` bash
 php artisan db:seed
 ```
-8. シンボリックリンクの作成(画像表示用)
+7. シンボリックリンクの作成(画像表示用)
 ``` bash
 php artisan storage:link
 ```

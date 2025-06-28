@@ -105,6 +105,7 @@
 .create-form__error {
     color: red;
     font-size: 0.9rem;
+    font-weight: bold;
     margin-top: 0.3rem;
 }
 

@@ -118,16 +118,18 @@
 .edit-form__error {
     color: red;
     font-size: 0.9rem;
+    font-weight: bold;
     margin: 0 0 1rem 0;
 }
 
 /* ボタン全体の囲い */
-.edit-form__buttons {
-    grid-column: span 2;
+.edit-form__button-area {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: center; /* 中央揃え */
+    align-items: center;
+    position: relative;      /* 削除ボタンを右端に配置するための基準 */
     margin-top: 2rem;
+    gap: 1rem;
 }
 
 .edit-form__btn {
@@ -148,15 +150,11 @@
     background-color: #f8c100;
 }
 
-/* 削除フォーム */
-.edit-form__delete {
-    display: block;
-    grid-column: span 2;
-    text-align: right;
-    top: -2rem;
+/* 削除ボタン用フォーム（右端固定） */
+.edit-form__delete-form {
+    position: absolute;
     right: 0;
 }
-
 .edit-form__btn--delete {
     background: none;
     border: none;

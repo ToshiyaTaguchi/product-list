@@ -19,6 +19,3 @@ Route::post('/products/register', [ProductController::class, 'store'])->name('pr
 Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
 
 Route::resource('/products', ProductController::class)->except(['create', 'store']);
-Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
-Route::post('/products/{product}/update', [ProductController::class, 'update'])->name('products.update');
-Route::delete('/products/{product}/delete', [ProductController::class, 'destroy'])->name('products.delete');

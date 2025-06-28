@@ -22,6 +22,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $seasons = Season::all();
+        $product->load('seasons'); 
         return view('products.edit', compact('product', 'seasons'));
     }
 
@@ -100,7 +101,7 @@ class ProductController extends Controller
         // 画像をstorageに保存
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-        $path = $image->storeAs('products', $image->getClientOriginalName(), 'public');
+        $path = $image->storeAs('images', $image->getClientOriginalName(), 'public');
         }
 
         // 商品を作成
