@@ -25,9 +25,15 @@ mysql:
 **Laravel環境構築**
 1. コンテナに入る
      `docker-compose exec php bash`
-2. .envファイルの作成
+2. composer install を実行
+``` bash
+composer install
+```
+3. .envファイルの作成
+``` bash
      `cp .env.example .env`
-3. .envに以下の環境変数を追加
+```
+4. .envに以下の環境変数を追加
 ``` text
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -36,21 +42,21 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
-4. アプリケーションキーの作成
+5. アプリケーションキーの作成
 ``` bash
 php artisan key:generate
 ```
 
-5. マイグレーションの実行
+6. マイグレーションの実行
 ``` bash
 php artisan migrate
 ```
 
-6. シーディングの実行
+7. シーディングの実行
 ``` bash
 php artisan db:seed
 ```
-7. シンボリックリンクの作成(画像表示用)
+8. シンボリックリンクの作成(画像表示用)
 ``` bash
 php artisan storage:link
 ```
